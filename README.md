@@ -57,10 +57,10 @@ Download the database from Baidu Netdisk:
 - **Link**: <https://pan.baidu.com/s/17aSAXsRQkCKpOfYo4E8vow?pwd=fkae>
 - **Extraction code**: `fkae`
 
-Unzip it into `ID-AIGC-6K/` so that the directory looks like:
+Unzip it into `data/` so that the directory looks like:
 
 ```
-ID-AIGC-6K/
+data/
 ├── image/            # 6,000 images, named <filename>.png
 ├── data.xlsx         # Annotations of all 6,000 images
 ├── train.xlsx        # 4,800 images
@@ -86,7 +86,7 @@ The loader divides all scores by 5 during training. Predictions are mapped back 
 
 ## Training
 
-With the data placed under `ID-AIGC-6K/`, run:
+With the data placed under `data/`, run:
 
 ```bash
 python train.py
@@ -109,7 +109,7 @@ Outputs:
 | `checkpoints/final.pth`       | Last epoch                          |
 | `results/training_log.csv`    | Per-epoch losses and PLCC / SRCC    |
 
-When training finishes, all three checkpoints are evaluated on `ID-AIGC-6K/test.xlsx`.
+When training finishes, all three checkpoints are evaluated on `data/test.xlsx`.
 
 ## Evaluation
 
